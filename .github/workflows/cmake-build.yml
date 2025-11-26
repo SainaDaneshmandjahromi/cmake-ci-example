@@ -1,0 +1,35 @@
+name: C++ CMake Build
+
+# Run on push or pull request to main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    name: CMake Build
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout repository
+    - uses: actions/checkout@v4
+
+    # Install CMake and compiler
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y cmake g++
+
+    # Configure and build
+    - name: Build project
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build .
+
+
