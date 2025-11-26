@@ -1,0 +1,16 @@
+/build/
+
+# Compiled object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# macOS specific files (optional)
+.DS_Store
